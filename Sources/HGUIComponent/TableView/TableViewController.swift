@@ -25,7 +25,7 @@ open class TableViewController: UIViewController {
     public var sections: [Section] = []
 
     // MARK: - Life Cycle
-    public override func viewDidLoad() {
+    open override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         self.setupConstraints()

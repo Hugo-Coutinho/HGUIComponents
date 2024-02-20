@@ -17,13 +17,13 @@ public class LoadingTableViewCell: UITableViewCell {
         activityIndicator.startAnimating()
         return activityIndicator
     }()
-
+    
     // MARK: - OVERRIDE -
     public override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupComponents()
     }
-
+    
     public required init?(coder: NSCoder) {
         super.init(coder: coder)
         setupComponents()
@@ -36,12 +36,13 @@ extension LoadingTableViewCell {
         contentView.addSubview(spinner)
         activateConstraints()
     }
-
+    
     private func activateConstraints() {
         NSLayoutConstraint.activate([
-            spinner.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
-            spinner.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            spinner.heightAnchor.constraint(equalToConstant: 50)
+            spinner.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            spinner.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+            spinner.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
+            spinner.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16)
         ])
     }
 }
